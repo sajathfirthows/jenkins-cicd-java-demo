@@ -1,22 +1,17 @@
 pipeline {
-  agent {
-    node {
-
-    }
-  }
+  agent any
 
   stages {
-    //Use this code for inline pipeline script option
+    // Use this code for inline pipeline script option
     /* stage('Code checkout') {
       steps {
-        //download code from github
+        // Download code from GitHub
         git 'https://github.com/sajathfirthows/jenkins-cicd-java-demo'
       }
-
-    }*/
+    } */
     stage('Build') {
       steps {
-        // Run the maven build
+        // Run the Maven build
         sh '"mvn" -Dmaven.test.failure.ignore clean install'
       }
     }
